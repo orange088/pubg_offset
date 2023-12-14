@@ -1,234 +1,204 @@
-GUObjects = 0x09D3F5F0,
-GWorld = 0x09D80918,
-XenuineDecrypt = 0x0862E328,
-GNames = 0x09F8CB28,
-ElementsPerChunk = 0x41A8,
-
-ObjID = 0x0010,
-XorKey1 = 0x92A6C3B6,
-XorKey2 = 0x10511EBC,
-Value = 0x0000,
-UsingRor = 0x0000,
-
+constexpr auto Offset_GUObjects = 0x09D3F5F0;
+constexpr auto Offset_GWorld = 0x09D80918;
+constexpr auto Offset_XenuineDecrypt = 0x0862E328;
+constexpr auto Offset_GNames = 0x09F8CB28;
+constexpr auto Offset_ElementsPerChunk = 0x41A8;
 
 namespace DecryptOuter{
-constexpr unsigned long long xor_key_1 = 0x4E1DB6A6A1A55C71,
-constexpr unsigned long long xor_key_2 = 0xED04ABEB577CE5E5,
-constexpr unsigned char offset = 0x08,
-constexpr unsigned char rval = 0x1B,
-constexpr bool IsingRor = false,
-},
+constexpr unsigned long long xor_key_1 = 0x4E1DB6A6A1A55C71;
+constexpr unsigned long long xor_key_2 = 0xED04ABEB577CE5E5;
+constexpr unsigned char offset = 0x08;
+constexpr unsigned char rval = 0x1B;
+constexpr bool IsingRor = false;
+};
 
 
 namespace DecryptClass{
-constexpr unsigned long long xor_key_1 = 0xA1EBE9C9BB0DFBBD,
-constexpr unsigned long long xor_key_2 = 0x8657EF98AB8F6E20,
-constexpr unsigned char offset = 0x20,
-constexpr unsigned char rval = 0x0F,
-constexpr bool IsingRor = true,
-},
+constexpr unsigned long long xor_key_1 = 0xA1EBE9C9BB0DFBBD;
+constexpr unsigned long long xor_key_2 = 0x8657EF98AB8F6E20;
+constexpr unsigned char offset = 0x20;
+constexpr unsigned char rval = 0x0F;
+constexpr bool IsingRor = true;
+};
 
 
 namespace DecryptNameIndex{
-constexpr unsigned int xor_key_1 = 0x92A6C3B6,
-constexpr unsigned int xor_key_2 = 0x10511EBC,
-constexpr unsigned char offset = 0x10,
-constexpr unsigned char rval = 0x00,
-constexpr bool IsingRor = false,
-},
+constexpr unsigned int xor_key_1 = 0x92A6C3B6;
+constexpr unsigned int xor_key_2 = 0x10511EBC;
+constexpr unsigned char offset = 0x10;
+constexpr unsigned char rval = 0x00;
+constexpr bool IsingRor = false;
+};
 
 
 namespace DecryptNameNumber{
-constexpr unsigned int xor_key_1 = 0xEED1EBC,
-constexpr unsigned int xor_key_2 = 0x5110C3B6,
-constexpr unsigned char offset = 0x14,
-constexpr unsigned char rval = 0x08,
-constexpr bool IsingRor = true,
-},
+constexpr unsigned int xor_key_1 = 0xEED1EBC;
+constexpr unsigned int xor_key_2 = 0x5110C3B6;
+constexpr unsigned char offset = 0x14;
+constexpr unsigned char rval = 0x08;
+constexpr bool IsingRor = true;
+};
 
 //-------------------------------------------
 
+struct {
+uint32_t ArrayDim = 0x0038;
+uint32_t ElementSize = 0x003C;
+uint32_t Offset = 0x0058;
+uint32_t PropertyFlags = 0x0040;
+uint32_t Size = 0x0080;
+} UProperty;
 
 
-CurrentLevel = 0x0158,
-Actors = 0x01E8,
-GameInstance = 0x0160,
-LocalPlayers = 0x0038,
-PlayerController = 0x0038,
-AcknowledgedPawn = 0x0480,
-PlayerCameraManager = 0x04A0,
-InputPitchScale = 0x0620,
-InputYawScale = 0x061C,
-CameraViewBehaviour = 0x0AF0,
+struct {
+uint32_t FunctionFlags = 0x00FC;
+uint32_t Function = 0x0120;
+} UFunction;
+
+
+struct {
+uint32_t SuperStruct = 0x0058;
+uint32_t Children = 0x0080;
+uint32_t PropertiesSize = 0x0078;
+} UStruct;
+
+//-------------------------------------------
+
+constexpr auto Offset_CurrentLevel = 0x0158;
+constexpr auto Offset_Actors = 0x01E8;
+constexpr auto Offset_GameInstance = 0x0160;
+constexpr auto Offset_LocalPlayers = 0x0038;
+constexpr auto Offset_PlayerController = 0x0038;
+constexpr auto Offset_AcknowledgedPawn = 0x0480;
+constexpr auto Offset_PlayerCameraManager = 0x04A0;
+constexpr auto Offset_LocalPlayersPTR = 0x09EC5FB0;
 
 // Class Engine.Controller
-ControlRotation = 0x0454,
-StateName = 0x0430,
+constexpr auto Offset_ControlRotation = 0x0454;
+constexpr auto Offset_StateName = 0x0430;
 
 //World
-OriginLocation = 0x09B4,
-DeltaSeconds = 0x09AC,
-TimeSeconds = 0x09A4,
+constexpr auto Offset_OriginLocation = 0x09B4;
+constexpr auto Offset_DeltaSeconds = 0x09AC;
+constexpr auto Offset_TimeSeconds = 0x09A4;
 
-GetIconTexture = 0x0062BB98,
-Resource = 0x0078,
-ImportedSize = 0x018C,
-WeaponIcon = 0x0428,
-WeaponIconRatio = 0x0430,
-GetIconTexture_Index = 0x0030,
+constexpr auto Offset_LineTraceSingle = 0x06673850;
+constexpr auto Offset_CurrentBuildNumber = 0x09BADC60;
+constexpr auto Offset_GameWindowSize = 0x09B4F500;
+constexpr auto Offset_CheckTab = 0x09FC2186;
+constexpr auto Offset_IsLobbyReady = 0x09B809F8;
 
-RefreshSkinInfo = 0x0035E794,
-LineTraceSingle = 0x06673850,
-GetDisplayName = 0x0667007C,
-ProjectWorldLocationToScreen = 0x003ED8F0,
-GetMousePosition = 0x00571C84,
-VTable_LineOfSightTo = 0x06F0,
-StopAllAnimMontages = 0x0052812C,
-GetTslCharacterOrSpectator = 0x0539DF30,
-GetLocalTslPlayerController = 0x00343D1C,
-
-CurrentBuildNumber = 0x09BADC60,
-GameWindowSize = 0x09B4F500,
-CheckTab = 0x09FC2186,
-IsLobbyReady = 0x09B809F8,
-
-InactiveStateInputComponent = 0x06C0,
-MyHUD = 0x0498,
-WidgetStateMap = 0x04F8,
-TrainingMapGrid = 0x06C0,
-SelectMinimapSizeIndex = 0x05C0,
-Slot = 0x0038,
-LayoutData = 0x0040,
-Visibility = 0x00A9,
-WidgetIsVisible = 0x003E1034,
+constexpr auto Offset_InactiveStateInputComponent = 0x06C0;
+constexpr auto Offset_MyHUD = 0x0498;
+constexpr auto Offset_WidgetStateMap = 0x04F8;
+constexpr auto Offset_BlockInputWidgetList = 0x0560;
+constexpr auto Offset_TrainingMapGrid = 0x06C0;
+constexpr auto Offset_SelectMinimapSizeIndex = 0x05C0;
+constexpr auto Offset_Slot = 0x0038;
+constexpr auto Offset_LayoutData = 0x0040;
+constexpr auto Offset_Visibility = 0x00A9;
 
 //TslCharacter
-PlayerState = 0x0428,
-PlayerName = 0x0428,
-PlayerStatistics = 0x07C4,
-PartnerLevel = 0x060E,
-ClanInfo = 0x0C10,
-bIsInAircraft = 0x0C48,
-PubgIdData = 0x0E60,
-DamageDealtOnEnemy = 0x07A8,
-SpectatedCount = 0x14C4,
-Health = 0x09A8,
-GroggyHealth = 0x1470,
-CharacterState = 0x1629,
-Team = 0x1CC8,
-LastTeamNum = 0x1CD0,
-CharacterName = 0x1C60,
-AimOffsets = 0x18D0,
+constexpr auto Offset_PlayerState = 0x0428;
+constexpr auto Offset_PlayerName = 0x0428;
+constexpr auto Offset_PlayerStatistics = 0x07C4;
+constexpr auto Offset_PartnerLevel = 0x060E;
+constexpr auto Offset_ClanInfo = 0x0C10;
+constexpr auto Offset_bIsInAircraft = 0x0C48;
+constexpr auto Offset_PubgIdData = 0x0E60;
+constexpr auto Offset_DamageDealtOnEnemy = 0x07A8;
+constexpr auto Offset_SpectatedCount = 0x14C4;
+constexpr auto Offset_Health = 0x09A8;
+constexpr auto Offset_GroggyHealth = 0x1470;
+constexpr auto Offset_CharacterState = 0x1629;
+constexpr auto Offset_Team = 0x1CC8;
+constexpr auto Offset_LastTeamNum = 0x1CD0;
+constexpr auto Offset_CharacterName = 0x1C60;
+constexpr auto Offset_AimOffsets = 0x18D0;
 
-Mesh = 0x04B8,
-StaticMesh = 0x0AC0,
-
-LastSubmitTime = 0x0748,
-LastRenderTime = 0x074C,
-LastRenderTimeOnScreen = 0x0750,
-VTable_GetTslPlayerState = 0x0960,
+constexpr auto Offset_Mesh = 0x04B8;
+constexpr auto Offset_StaticMesh = 0x0AC0;
+constexpr auto Offset_LastSubmitTime = 0x0748;
+constexpr auto Offset_LastRenderTime = 0x074C;
+constexpr auto Offset_LastRenderTimeOnScreen = 0x0750;
 
 //Actor
-Owner = 0x0078,
-OwnedComponents = 0x0370,
-RootComponent = 0x01B0,
-VTable_SetReplicateMovement = 0x0290,
-VTable_GetVelocity = 0x0348,
+constexpr auto Offset_Owner = 0x0078;
+constexpr auto Offset_OwnedComponents = 0x0370;
+constexpr auto Offset_RootComponent = 0x01B0;
 
 //SceneComponent
-AttachParent = 0x0240,
-RelativeLocation = 0x0374,
-ComponentVelocity = 0x0248,
-ComponentToWorld = 0x02B0,
-ComponentLocation = 0x02C0,
-VTable_GetSocketTransform = 0x0428,
-VTable_GetSocketRotation = 0x0438,
-VTable_GetSocketLocation = 0x0430,
+constexpr auto Offset_AttachParent = 0x0240;
+constexpr auto Offset_RelativeLocation = 0x0374;
+constexpr auto Offset_ComponentVelocity = 0x0248;
+constexpr auto Offset_ComponentToWorld = 0x02B0;
+constexpr auto Offset_ComponentLocation = 0x02C0;
 
 //PlayerCameraManager
-ViewPitchMin = 0x1630,
-ViewPitchMax = 0x103C,
-ViewYawMin = 0x0A18,
-ViewYawMax = 0x1CD4,
-CameraLocation = 0x107C,
-CameraRotation = 0x109C,
-CameraFov = 0x1098,
-VTable_StopAllCameraShakes = 0x07C8,
-VTable_StopAllCameraAnims = 0x0800,
+constexpr auto Offset_CameraLocation = 0x107C;
+constexpr auto Offset_CameraRotation = 0x109C;
+constexpr auto Offset_CameraFov = 0x1098;
 
 //Package
-ItemPackage = 0x0580,
-PackageType = 0x05E4,
-PackageIcon = 0x04F8,
-PackageIconSizeRatio = 0x0500,
+constexpr auto Offset_ItemPackage = 0x0580;
 
 //Items
-ItemTableRowBase = 0x00B0,
-ItemName = 0x0018,
-ItemID = 0x0268,
-DroppedItem = 0x0438,
-DroppedItemGroup_UItem = 0x0718,
+constexpr auto Offset_ItemTableRowBase = 0x00B0;
+constexpr auto Offset_ItemName = 0x0018;
+constexpr auto Offset_ItemID = 0x0268;
+constexpr auto Offset_DroppedItem = 0x0438;
+constexpr auto Offset_DroppedItemGroup_UItem = 0x0718;
 
 //ATslWeapon
-WeaponProcessor = 0x08E0,
-EquippedWeapons = 0x0208,
-CurrentWeaponIndex = 0x0311,
-WeaponTrajectoryData = 0x1040,
-TrajectoryGravityZ = 0x0F6C,
-TrajectoryConfig = 0x0108,
-FloatCurves = 0x0038,
-GetVectorValue = 0x003EB100,
+constexpr auto Offset_WeaponProcessor = 0x08E0;
+constexpr auto Offset_EquippedWeapons = 0x0208;
+constexpr auto Offset_CurrentWeaponIndex = 0x0311;
+constexpr auto Offset_WeaponTrajectoryData = 0x1040;
+constexpr auto Offset_TrajectoryGravityZ = 0x0F6C;
+constexpr auto Offset_TrajectoryConfig = 0x0108;
+constexpr auto Offset_FloatCurves = 0x0038;
 
-WeaponConfig = 0x04D0,
-WeaponClass = 0x0094,
-Mesh3P = 0x07A0,
-FiringAttachPoint = 0x0840,
-ScopingAttachPoint = 0x0C48,
-FiringModeIndex = 0x0A9C,
-CurrentAmmoData = 0x0A60,
-AttachedStaticComponentMap = 0x11B8,
-ScopeType = 0x0E95,
-GetCurrentScopeZeroingDistance = 0x059C52C4,
-GetScopeMeshRelativePosition = 0x059C7660,
+constexpr auto Offset_WeaponConfig = 0x04D0;
+constexpr auto Offset_WeaponClass = 0x0094;
+constexpr auto Offset_Mesh3P = 0x07A0;
+constexpr auto Offset_FiringAttachPoint = 0x0840;
+constexpr auto Offset_ScopingAttachPoint = 0x0C48;
+constexpr auto Offset_FiringModeIndex = 0x0A9C;
+constexpr auto Offset_CurrentAmmoData = 0x0A60;
+constexpr auto Offset_AttachedStaticComponentMap = 0x11B8;
+constexpr auto Offset_ScopeType = 0x0E95;
 
 //CharacterMovement
-CharacterMovement = 0x0538,
-StanceMode = 0x0500,
-MovementMode = 0x02D0,
-Acceleration = 0x03A8,
-MaxAcceleration = 0x0308,
-LastUpdateVelocity = 0x03D0,
-PendingLaunchVelocity = 0x054C,
+constexpr auto Offset_CharacterMovement = 0x0538;
+constexpr auto Offset_StanceMode = 0x0500;
+constexpr auto Offset_MovementMode = 0x02D0;
+constexpr auto Offset_Acceleration = 0x03A8;
+constexpr auto Offset_MaxAcceleration = 0x0308;
+constexpr auto Offset_LastUpdateVelocity = 0x03D0;
 
-AnimScriptInstance = 0x0C60,
-ControlRotation_CP = 0x07FC,
-RecoilADSRotation_CP = 0x09FC,
-LeanLeftAlpha_CP = 0x0E04,
-LeanRightAlpha_CP = 0x0E08,
-bIsScoping_CP = 0x0D26,
+constexpr auto Offset_AnimScriptInstance = 0x0C60;
+constexpr auto Offset_ControlRotation_CP = 0x07FC;
+constexpr auto Offset_RecoilADSRotation_CP = 0x09FC;
+constexpr auto Offset_LeanLeftAlpha_CP = 0x0E04;
+constexpr auto Offset_LeanRightAlpha_CP = 0x0E08;
+constexpr auto Offset_bIsScoping_CP = 0x0D26;
 
-VehicleRiderComponent = 0x1F80,
-SeatIndex = 0x0230,
-LastVehiclePawn = 0x0270,
-ReplicatedMovement = 0x0080,
-
-ReplicatedSkinParam = 0x1178,
-ReplicatedSkinItem = 0x0168,
-Equipment = 0x0450,
-Items = 0x0470,
-InventoryFacade = 0x1BE0,
+constexpr auto Offset_VehicleRiderComponent = 0x1F80;
+constexpr auto Offset_SeatIndex = 0x0230;
+constexpr auto Offset_LastVehiclePawn = 0x0270;
+constexpr auto Offset_ReplicatedMovement = 0x0080;
 
 //ATslProjectile
-ProjectileParticle = 0x0520,
-ExplodeState = 0x05D0,
-ProjectileConfig = 0x0630,
-TimeTillExplosion = 0x079C,
-TickStartVelocity = 0x08A0,
+constexpr auto Offset_ProjectileParticle = 0x0520;
+constexpr auto Offset_ExplodeState = 0x05D0;
+constexpr auto Offset_ProjectileConfig = 0x0630;
+constexpr auto Offset_TimeTillExplosion = 0x079C;
+constexpr auto Offset_TickStartVelocity = 0x08A0;
 
 //UTslVehicleCommonComponent
-VehicleCommonComponent_Floating = 0x04C0,
-VehicleCommonComponent_Wheeled = 0x0BF8,
-VehicleHealth = 0x02D8,
-VehicleHealthMax = 0x02DC,
-VehicleFuel = 0x02E0,
-VehicleFuelMax = 0x02E4,
+constexpr auto Offset_VehicleCommonComponent_Floating = 0x04C0;
+constexpr auto Offset_VehicleCommonComponent_Wheeled = 0x0BF8;
+constexpr auto Offset_VehicleHealth = 0x02D8;
+constexpr auto Offset_VehicleHealthMax = 0x02DC;
+constexpr auto Offset_VehicleFuel = 0x02E0;
+constexpr auto Offset_VehicleFuelMax = 0x02E4;
