@@ -6,6 +6,8 @@ constexpr auto Offset_GNames = 0x0A92CCF0;
 constexpr auto Offset_ElementsPerChunk = 0x3E4C;
 
 constexpr auto Offset_CurrentLevel = 0x0150;
+constexpr auto Offset_GameInstance = 0x0160;
+constexpr auto Offset_LocalPlayers = 0x0040;
 constexpr auto Offset_Actors = 0x0128;
 constexpr auto Offset_PlayerController = 0x0030;
 constexpr auto Offset_AcknowledgedPawn = 0x04A8;
