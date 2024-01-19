@@ -112,8 +112,6 @@ constexpr auto Offset_StanceMode = 0x0500;
 constexpr auto Offset_MovementMode = 0x02C8;
 constexpr auto Offset_Acceleration = 0x03A8;
 constexpr auto Offset_MaxAcceleration = 0x0308;
-constexpr auto Offset_LastUpdateVelocity = 0x03D0;
-constexpr auto Offset_PendingLaunchVelocity = 0x054C;
 
 constexpr auto Offset_AnimScriptInstance = 0x0C60;
 constexpr auto Offset_ControlRotation_CP = 0x07F4;
