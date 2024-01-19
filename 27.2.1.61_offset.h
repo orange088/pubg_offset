@@ -1,3 +1,5 @@
+//QQ Group：600811082
+
 constexpr auto Offset_GameVer = 0x089AFF18;
 constexpr auto Offset_GUObjects = 0x0A6DFB70;
 constexpr auto Offset_GWorld = 0x0A721088;
