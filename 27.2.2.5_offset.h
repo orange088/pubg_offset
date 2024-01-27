@@ -1,4 +1,5 @@
-//BY:Orange 89496414
+//QQ Group：600811082
+
 constexpr auto Offset_GameVer = 0x088CC870;
 constexpr auto Offset_GUObjects = 0x0A5605F0;
 constexpr auto Offset_GWorld = 0x0A5A1B08;
