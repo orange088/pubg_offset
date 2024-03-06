@@ -1,6 +1,14 @@
 //PUBG-DumpOffset By:Orange
 //QQ Group:600811082
 
+enum DecryptIndex : unsigned int {
+#define IndexXorKey1 ( 0xF1C590E9 )
+#define IndexXorKey2 ( 0x2C61B05F )
+	Index_Offset = 0x20,
+	Index_Value = 0x0F,
+	Index_UsingRor = 0x01
+};
+
 constexpr auto Offset_GameVersion = 0x0A561028;
 constexpr auto Offset_DecryptPropertyOffset = 0x0763C568;
 constexpr auto Offset_GUObjects = 0x0C43D7F0;
